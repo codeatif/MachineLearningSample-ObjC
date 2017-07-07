@@ -15,5 +15,7 @@ to process image. Vision framework allows quick face recognition.
 Screenshots:
 
 As you can see the model is not exactly 100% correct and still has miles to cover!
-![Alt text](/Screenshots/Simulator%20Screen%20Shot%20Jul%207%2C%202017%20at%2011.45.36%20AM.png?raw=true "")
+![Alt text](/Screenshots/1.png?raw=true "")
+![Alt text](/Screenshots/2.png?raw=true "")
+![Alt text](/Screenshots/3.png?raw=true "")
 
