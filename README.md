@@ -6,11 +6,12 @@ Requirements:
 
 1. iOS 11 for all features
 2. Xcode 9
+3. Download the Inceptionv3.mlmodel file from the below url and put it inside the Resource folder.
 
 Usage:
 
 Run the app and select an image from gallery or camera. App uses Inceptionv3.mlmodel (https://docs-assets.developer.apple.com/coreml/models/Inceptionv3.mlmodel)
-to process image. Download the Inceptionv3.mlmodel file from the url and put it inside the project folder. Detect the whole face using 
+to process image. Detect the whole face using 
 <b>VNDetectFaceRectanglesRequest</b>.
 
 To detect specific facial landmarks like face contour, eyes, eyebrow, nose, lips with outer lips and others, use:
