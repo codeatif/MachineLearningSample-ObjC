@@ -10,7 +10,11 @@ Requirements:
 Usage:
 
 Run the app and select an image from gallery or camera. App uses Inceptionv3.mlmodel (https://docs-assets.developer.apple.com/coreml/models/Inceptionv3.mlmodel)
-to process image. Vision framework allows quick face recognition.
+to process image. Download the Inceptionv3.mlmodel file from the url and put it inside the project folder. Detect the whole face using 
+<b>VNDetectFaceRectanglesRequest</b>.
+
+To detect specific facial landmarks like face contour, eyes, eyebrow, nose, lips with outer lips and others, use:
+<b>VNDetectFaceLandmarksRequest</b>
 
 Screenshots:
 
