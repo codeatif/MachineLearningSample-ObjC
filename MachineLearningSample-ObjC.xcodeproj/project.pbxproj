@@ -13,6 +13,8 @@
 		BE2E22DB1F0F4FB400D92AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE2E22DA1F0F4FB400D92AA5 /* Assets.xcassets */; };
 		BE2E22DE1F0F4FB400D92AA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2E22DC1F0F4FB400D92AA5 /* LaunchScreen.storyboard */; };
 		BE2E22E11F0F4FB400D92AA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2E22E01F0F4FB400D92AA5 /* main.m */; };
+		BE2E22E91F0F503E00D92AA5 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE2E22E81F0F503E00D92AA5 /* Inceptionv3.mlmodel */; };
+		BE2E22EB1F0F505700D92AA5 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2E22EA1F0F505700D92AA5 /* camera.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		BE2E22DD1F0F4FB400D92AA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE2E22DF1F0F4FB400D92AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE2E22E01F0F4FB400D92AA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE2E22E81F0F503E00D92AA5 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../Downloads/Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		BE2E22EA1F0F505700D92AA5 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = "../../../../Downloads/SimpleInceptionV3-ObjC-master/Resources/camera.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		BE2E22D01F0F4FB300D92AA5 /* MachineLearningSample-ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				BE2E22E71F0F4FDC00D92AA5 /* Resources */,
 				BE2E22D11F0F4FB300D92AA5 /* AppDelegate.h */,
 				BE2E22D21F0F4FB400D92AA5 /* AppDelegate.m */,
 				BE2E22D41F0F4FB400D92AA5 /* ViewController.h */,
@@ -69,6 +74,15 @@
 				BE2E22E01F0F4FB400D92AA5 /* main.m */,
 			);
 			path = "MachineLearningSample-ObjC";
+			sourceTree = "<group>";
+		};
+		BE2E22E71F0F4FDC00D92AA5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE2E22EA1F0F505700D92AA5 /* camera.png */,
+				BE2E22E81F0F503E00D92AA5 /* Inceptionv3.mlmodel */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +144,7 @@
 			files = (
 				BE2E22DE1F0F4FB400D92AA5 /* LaunchScreen.storyboard in Resources */,
 				BE2E22DB1F0F4FB400D92AA5 /* Assets.xcassets in Resources */,
+				BE2E22EB1F0F505700D92AA5 /* camera.png in Resources */,
 				BE2E22D91F0F4FB400D92AA5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2E22D61F0F4FB400D92AA5 /* ViewController.m in Sources */,
+				BE2E22E91F0F503E00D92AA5 /* Inceptionv3.mlmodel in Sources */,
 				BE2E22E11F0F4FB400D92AA5 /* main.m in Sources */,
 				BE2E22D31F0F4FB400D92AA5 /* AppDelegate.m in Sources */,
 			);
