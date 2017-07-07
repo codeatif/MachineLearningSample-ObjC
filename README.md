@@ -4,8 +4,8 @@ A simple iOS app to demonstrate Machine Learning capabilities using Core ML and 
 
 Requirements:
 
-iOS 11 for all features
-Xcode 9
+1. iOS 11 for all features
+2. Xcode 9
 
 Usage:
 
