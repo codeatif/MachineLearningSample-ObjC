@@ -98,6 +98,60 @@
     }
 }
 
+# pragma mark Text Detection
+- (void)drawTextRect:(CIImage*)image{
+    //text
+    VNDetectTextRectanglesRequest *textLandmarks = [VNDetectTextRectanglesRequest new];
+    textLandmarks.reportCharacterBoxes = YES;
+    VNSequenceRequestHandler *faceLandmarksDetectionRequest = [VNSequenceRequestHandler new];
+    [faceLandmarksDetectionRequest performRequests:@[textLandmarks] onCIImage:image error:nil];
+    for(VNTextObservation *observation in textLandmarks.results){
+            //find text rectangle
+        for (VNRectangleObservation* box in observation.characterBoxes){
+            //draw rect on each char of the text
+            CGRect boundingBox = box.boundingBox;
+            NSLog(@" |-%@", NSStringFromCGRect(boundingBox));
+            CGSize size = CGSizeMake(boundingBox.size.width * self.sourceImgView.bounds.size.width, boundingBox.size.height * self.sourceImgView.bounds.size.height);
+            CGPoint origin = CGPointMake(boundingBox.origin.x * self.sourceImgView.bounds.size.width, (1-boundingBox.origin.y)*self.sourceImgView.bounds.size.height - size.height);
+            
+            CAShapeLayer *layer = [CAShapeLayer layer];
+            
+            layer.frame = CGRectMake(origin.x, origin.y, size.width, size.height);
+            layer.borderColor = [UIColor blueColor].CGColor;
+            layer.borderWidth = 1.5;
+            
+            [self.sourceImgView.layer addSublayer:layer];
+        }
+    }
+}
+
+- (void)detectText:(CIImage*)image{
+    //create req
+    VNDetectTextRectanglesRequest *textReq = [VNDetectTextRectanglesRequest new];
+    NSDictionary *d = [[NSDictionary alloc] init];
+    //req handler
+    VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCIImage:image options:d];
+    //send req to handler
+    [handler performRequests:@[textReq] error:nil];
+    
+    //is there a character?
+    for(VNTextObservation  *observation in textReq.results){
+        if(observation){
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Text Detected!"
+                                                                           message:@"I've found a text in there! Show you where I'd found that?"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Show" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {
+                                                                      [self drawTextRect:image];
+                                                                  }];
+            [alert addAction:defaultAction];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self presentViewController:alert animated:YES completion:nil];
+            });
+        }
+    }
+}
+
 # pragma mark Image Picker Delegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -110,6 +164,10 @@
     //face detection, clear previously drawn detection rectangle
     self.sourceImgView.layer.sublayers = nil;
     [self detectFace:image];
+    
+    //text detection, clear previously drawn detection rectangle
+    self.sourceImgView.layer.sublayers = nil;
+    [self detectText:image];
     
     //image processing
     [self processImage: image];
