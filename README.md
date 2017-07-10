@@ -27,9 +27,9 @@ Screenshots:
 
 As you can see the model is not exactly 100% correct and still has miles to cover!
 
-![Alt text](/Screenshots/1.png?raw=true "")
-![Alt text](/Screenshots/2.png?raw=true "")
-![Alt text](/Screenshots/3.png?raw=true "")
-![Alt text](/Screenshots/ss4.png?raw=true "")
-![Alt text](/Screenshots/ss5.png?raw=true "")
+![Face Recognition](/Screenshots/1.png?raw=true "")
+![Object Recognition](/Screenshots/2.png?raw=true "")
+![Multi Face Recognition](/Screenshots/3.png?raw=true "")
+![Character Recognition](/Screenshots/4.png?raw=true "")
+![Character Recognition](/Screenshots/5.png?raw=true "")
 
