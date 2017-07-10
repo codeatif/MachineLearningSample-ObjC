@@ -117,8 +117,8 @@
             CAShapeLayer *layer = [CAShapeLayer layer];
             
             layer.frame = CGRectMake(origin.x, origin.y, size.width, size.height);
-            layer.borderColor = [UIColor blueColor].CGColor;
-            layer.borderWidth = 1.5;
+            layer.borderColor = [UIColor redColor].CGColor;
+            layer.borderWidth = 2;
             
             [self.sourceImgView.layer addSublayer:layer];
         }
