@@ -32,4 +32,6 @@ As you can see the model is not exactly 100% correct and still has miles to cove
 ![Multi Face Recognition](/Screenshots/3.png?raw=true "")
 ![Character Recognition](/Screenshots/4.png?raw=true "")
 ![Character Recognition](/Screenshots/5.png?raw=true "")
+![Character Recognition](/Screenshots/6.png?raw=true "")
+![Character Recognition](/Screenshots/7.png?raw=true "")
 
