@@ -8,6 +8,12 @@ Requirements:
 2. Xcode 9
 3. Download the Inceptionv3.mlmodel file from the below url and put it inside the Resource folder.
 
+On Showcase:
+
+1. Machine Learning sample (image recognition).
+2. Face recognition using Vision Framework.
+3. Text recognition using Vision Framework.
+
 Usage:
 
 Run the app and select an image from gallery or camera. App uses Inceptionv3.mlmodel (https://docs-assets.developer.apple.com/coreml/models/Inceptionv3.mlmodel)
@@ -24,4 +30,6 @@ As you can see the model is not exactly 100% correct and still has miles to cove
 ![Alt text](/Screenshots/1.png?raw=true "")
 ![Alt text](/Screenshots/2.png?raw=true "")
 ![Alt text](/Screenshots/3.png?raw=true "")
+![Alt text](/Screenshots/ss4.png?raw=true "")
+![Alt text](/Screenshots/ss5.png?raw=true "")
 
