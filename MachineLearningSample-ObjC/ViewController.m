@@ -103,14 +103,14 @@
     //text
     VNDetectTextRectanglesRequest *textLandmarks = [VNDetectTextRectanglesRequest new];
     textLandmarks.reportCharacterBoxes = YES;
-    VNSequenceRequestHandler *faceLandmarksDetectionRequest = [VNSequenceRequestHandler new];
-    [faceLandmarksDetectionRequest performRequests:@[textLandmarks] onCIImage:image error:nil];
+    VNSequenceRequestHandler *handler = [VNSequenceRequestHandler new];
+    [handler performRequests:@[textLandmarks] onCIImage:image error:nil];
     for(VNTextObservation *observation in textLandmarks.results){
             //find text rectangle
         for (VNRectangleObservation* box in observation.characterBoxes){
             //draw rect on each char of the text
             CGRect boundingBox = box.boundingBox;
-            NSLog(@" |-%@", NSStringFromCGRect(boundingBox));
+//            NSLog(@" |-%@", NSStringFromCGRect(boundingBox));
             CGSize size = CGSizeMake(boundingBox.size.width * self.sourceImgView.bounds.size.width, boundingBox.size.height * self.sourceImgView.bounds.size.height);
             CGPoint origin = CGPointMake(boundingBox.origin.x * self.sourceImgView.bounds.size.width, (1-boundingBox.origin.y)*self.sourceImgView.bounds.size.height - size.height);
             
@@ -186,7 +186,7 @@
         [self presentViewController:picker animated:YES completion:NULL];
     }else{
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"No camera found!"
-                                                                       message:@"Are you on simlulator? Use an actual device or try picking an image from gallery"
+                                                                       message:@"Are you on simulator? Use an actual device or try picking an image from gallery"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {}];
